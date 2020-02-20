@@ -1,4 +1,8 @@
 *{margin: 0; padding: 0;}
+
+.content {
+    padding-left: 1rem;
+}
 a,
 a:hover{
     color: black;
