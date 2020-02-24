@@ -1,57 +1,7 @@
-*{margin: 0; padding: 0;}
-
-.content {
-    padding-left: 1rem;
-}
-a,
-a:hover{
-    color: black;
-}
-
-span.counter {
-    float: right;
-}
-
-li {
-    text-align: center;
-    list-style: none;
-}
-
-.controls {
-    text-align: right;
-    position: relative;
-} 
-body{
-    background-color: gray;
-}
-#big{
-    background: rgb(250, 250, 250);
-    border-radius: 15px;
-    padding: 40px;
-    margin: 100px;
-}
-.overview{
-    text-align: center;
-}
-#navId{
-    padding-top: 1rem;
-}
-.item{
-    margin-left: 80px;
-}
-.container-fluid.header-wrapper{
-    background: white;
-    border-radius: 15px;
-} 
-.row{
-    padding-top: 3rem;
-}
-.date{
-    float: right;
-}
-table{
-    width: 100%;
-}
-li{
-    text-align: left;
+article .content{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 }

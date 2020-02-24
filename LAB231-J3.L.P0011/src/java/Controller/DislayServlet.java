@@ -80,6 +80,7 @@ public class DislayServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);                
         ArrayList<Post> ap = Post.getP();
+        System.out.println(ap.toString());
         session.setAttribute("list", ap);
         
         i++;
