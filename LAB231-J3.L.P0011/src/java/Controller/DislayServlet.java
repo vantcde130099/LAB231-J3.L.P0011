@@ -31,6 +31,10 @@ public class DislayServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    int i = 0; //counter
+    public void init(){
+        i = 1;
+    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -74,10 +78,13 @@ public class DislayServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-                
+        HttpSession session = request.getSession(true);                
         ArrayList<Post> ap = Post.getP();
         session.setAttribute("list", ap);
+        
+        i++;
+        session.setAttribute("count", i);
+        
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }

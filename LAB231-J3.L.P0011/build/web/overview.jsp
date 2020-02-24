@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="d" uri="/WEB-INF/tlds/display"%>
+<jsp:useBean id="counter" class="Controller.CountFilter" scope="application"></jsp:useBean>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +28,8 @@
                 </div>
                 <nav class="navbar navbar-expand navbar-light bg-light pt-2">
                     <div class="nav navbar-nav">
-                        <a class="nav-item nav-link active" href="#">My Blog <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="aboutme.html">About Me</a>
+                        <a class="nav-item nav-link active" href="index.jsp">My Blog <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="aboutme.jsp">About Me</a>
                     </div>
                 </nav>
             </div>
@@ -45,7 +47,7 @@
                             </tr>
                             <c:forEach items="${list}" var="post">
                                 <tr>
-                                    <td><a href="">${post.pTitle}</a></td>
+                                    <td><a href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></td>
                                     <td class="date">${post.date}</td>
                                 </tr>
                             </c:forEach>
@@ -73,7 +75,7 @@
             <div class="container">
                 <div class="footer">
                     <span>This website was created with team3</span>
-                    <span class="counter">123</span>
+                    <span class="counter">${hit}</span>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="d" uri="/WEB-INF/tlds/display"%>
+<jsp:useBean id="counter" class="Controller.CountFilter" scope="application"></jsp:useBean>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +28,8 @@
                 </div>
                 <nav class="navbar navbar-expand navbar-light bg-light pt-2">
                     <div class="nav navbar-nav">
-                        <a class="nav-item nav-link active" href="#">My Blog <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="aboutme.html">About Me</a>
+                        <a class="nav-item nav-link active" href="index.jsp">My Blog <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="aboutme.jsp">About Me</a>
                     </div>
                 </nav>
             </div>
@@ -70,7 +72,7 @@
                                 </div>                                
                             </div>
                             <div class="overview">
-                                <a href="">Overview</a>
+                                <a href="overview.jsp">Overview</a>
                             </div>
                         </div>
                     </div>
@@ -80,10 +82,10 @@
                                 <h5 class="card-title">Share this page</h5>
                                 <div class="p-1">
                                     <ul>
-                                        <li><a id="share-facebook" href="https://www.facebook.com/blackBEO.99"><i
+                                        <li><a id="share-facebook" href="https://www.facebook.com/sharer.php?u=localhost:8084/LAB231-J3.L.P0011/index.jsp"><i
                                                     class="fab fa-facebook-square"></i></i><span>Share on
                                                     Facebook</span></a></li>
-                                        <li><a id="share-twitter" href="https://www.facebook.com/blackBEO.99"><i
+                                        <li><a id="share-twitter" href="http://twitter.com/share?url=localhost:8084/LAB231-J3.L.P0011/index.jsp"><i
                                                     class="fab fa-twitter-square"></i></i><span>Share on
                                                     Twitter</span></a></li>
                                     </ul>
@@ -96,11 +98,11 @@
                 <div class="container">
                     <div class="footer">
                         <span>This website was created with team3</span>
-                        <span class="counter">123</span>
+                        <span class="counter">${hit}</span>
                     </div>
                 </div>
             </div>
-
+            
             <script type="text/javascript" src="1.js"></script>
     </body>
 
