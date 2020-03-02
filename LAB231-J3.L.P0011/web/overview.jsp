@@ -55,11 +55,11 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav" id="topMenu" data-submenu="horizontal">
                                             <li class=" active " style="">
-                                                <a rel="nofollow" href="index.jsp">My
+                                                <a rel="nofollow" href="${homeurl}">My
                                                     Blog</a>
                                             </li>
                                             <li class="  " style="">
-                                                <a rel="nofollow" href="aboutme.jsp">About
+                                                <a rel="nofollow" href="${aboutmeurl}">About
                                                     Me</a>
                                             </li>
                                         </ul>
@@ -89,7 +89,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <c:forEach items="${list}" var="post">
+                                                    <c:forEach items="${list}" var="post">
                                                         <tr data-id="3232873">
                                                             <td width="60%"><a
                                                                     href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></td>
@@ -97,61 +97,61 @@
                                                             <td><i class="fas fa-comment"></i>0</td>
                                                             <td class="align-right">${post.date}</td>
                                                         </tr>   
-                                                        </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div id="right" class="span3 ">
-                                <div class=" sidebar">
-                                    <div class="wrapper share-box">
-                                        <style>
-                                            .wordwrapfix {
-                                                word-wrap: break-word;
-                                            }
-                                        </style>
-                                        <div class="heading wordwrapfix">
-                                            <h4>Share this page</h4>
-                                        </div>
 
-                                        <div class="content"><span>
-                                                <ul>
-                                                    <li><a id="share-facebook"
-                                                           href=""><i class="fab fa-facebook-square"></i><span>Share on
-                                                                Facebook</span></a></li>
-                                                    <li><a id="share-twitter"
-                                                           href=""><i class="fab fa-twitter-square"></i><span>Share on Twitter</span></a>
-                                                    </li>
-                                                </ul>
-                                            </span></div>
-                                    </div>                               
-                                </div>
                             </div>
+                        </div>
+                        <div id="right" class="span3 ">
+                            <div class=" sidebar">
+                                <div class="wrapper share-box">
+                                    <style>
+                                        .wordwrapfix {
+                                            word-wrap: break-word;
+                                        }
+                                    </style>
+                                    <div class="heading wordwrapfix">
+                                        <h4>Share this page</h4>
+                                    </div>
 
-                        </div>      
-
-                    </div>        
-                    <div class="container-fluid footer-wrapper" id="footer">                
-                        <div class="container">
-                            <div class="footer-info">
-                                <div class="footer-info-text">
-                                    This website was created with team 3
-                                </div>
+                                    <div class="content"><span>
+                                            <ul>
+                                                <li><a id="share-facebook"
+                                                       href=""><i class="fab fa-facebook-square"></i><span>Share on
+                                                            Facebook</span></a></li>
+                                                <li><a id="share-twitter"
+                                                       href=""><i class="fab fa-twitter-square"></i><span>Share on Twitter</span></a>
+                                                </li>
+                                            </ul>
+                                        </span></div>
+                                </div>                               
                             </div>
-                            <div class="footer-page-counter" style="display: block;">
-                                <span>${hit}</span>
+                        </div>
+
+                    </div>      
+
+                </div>        
+                <div class="container-fluid footer-wrapper" id="footer">                
+                    <div class="container">
+                        <div class="footer-info">
+                            <div class="footer-info-text">
+                                This website was created with team 3
+                            </div>
+                        </div>
+                        <div class="footer-page-counter" style="display: block;">
+                            <span>${hit}</span>
                         </div>
                         <div id="css_simplesite_com_fallback" class="hide"></div>
                     </div>
                 </div> 
+            </div>
+            <div style="display: none; visibility: hidden;">            
+                <noscript></noscript>
+            </div>
+    </body>
 
-                <div style="display: none; visibility: hidden;">            
-                    <noscript></noscript>
-                </div>
-                </body>
-
-                </html>    
+</html>    

@@ -78,6 +78,7 @@ public class ListServlet extends HttpServlet {
                 
         ArrayList<Post> ap = Post.getP();
         session.setAttribute("list", ap);
+        
         RequestDispatcher rd = request.getRequestDispatcher("overview.jsp");
         rd.forward(request, response);
         

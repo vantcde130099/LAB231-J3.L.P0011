@@ -87,9 +87,25 @@ public class DetailServlet extends HttpServlet {
                 break;
             }
         }
-        System.out.println("ok");
-        System.out.println(out);
-        session.setAttribute("output", output);
+        ArrayList<Post> firstList = new ArrayList<>();
+        ArrayList<Post> secondList = new ArrayList<>();
+        ArrayList<Post> thirdList = new ArrayList<>();
+        System.out.println(ap.toString());
+
+        for (Post p : output) {
+            if (p.getpPic() == null) {
+                secondList.add(p);
+            } else if (p.getpContent() == null) {
+                thirdList.add(p);
+            } else {
+                firstList.add(p);
+            }
+        }        
+        session.setAttribute("first", firstList);
+        session.setAttribute("second", secondList);
+        session.setAttribute("third", thirdList);
+        
+        session.setAttribute("url", "http://localhost:8084/LAB231-J3.L.P0011/ListServlet");
         if (out != null) {
             RequestDispatcher rd = request.getRequestDispatcher("detail.jsp");
             rd.forward(request, response);

@@ -15,7 +15,7 @@
 
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <script src="https://kit.fontawesome.com/eee6e774ce.js" crossorigin="anonymous"></script>
-            <script async="" src="./home_files/gtm.js.download"></script>            
+
 
             <style type="text/css">
                 .fancybox-margin {
@@ -24,7 +24,7 @@
             </style>
         </head>
 
-        <body data-pid="422328564" data-iid="">
+        <body>
             <div class="container-fluid site-wrapper">            
                 <div class="container-fluid header-wrapper " id="header">                
                     <div class="container">
@@ -55,11 +55,11 @@
                                     <div class="nav-collapse collapse">
                                         <ul class="nav" id="topMenu" data-submenu="horizontal">
                                             <li class=" active " style="">
-                                                <a rel="nofollow" href="index.jsp">My
+                                                <a rel="nofollow" href="${homeurl}">My
                                                     Blog</a>
                                             </li>
                                             <li class="  " style="">
-                                                <a rel="nofollow" href="aboutme.jsp">About
+                                                <a rel="nofollow" href="${aboutmeurl}">About
                                                     Me</a>
                                             </li>
                                         </ul>
@@ -78,137 +78,136 @@
                                         <h1 class="page-title">My Blog</h1>
                                     </div>
                                     <div class="content">
-                                    <c:forEach items="${list}" var="post">
-                                        <c:choose>
-                                            <c:when test="${post.pId== '1'}"><table>
-                                                    <div class="section">
-                                                        <div class="item">
-                                                            <div class="content">
-                                                                <div class="avatar">
-                                                                    <i class="fas fa-pencil-alt icon-4x"></i>
-                                                                </div>
-                                                                <div class="controls">
-                                                                    <span class="date-text">${post.date}</span>
-                                                                </div>
-                                                                <div class="heading">
-                                                                    <h4><a rel="nofollow"
-                                                                           href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></h4>
-                                                                </div>
-                                                                </tr>
-                                                                <div class="content">
-                                                                    <div class="img-simple span6 pull-left">
-                                                                        <div class="image">
-                                                                            <a rel="nofollow" data-ss="imagemodal"
-                                                                               data-href=""><img
-                                                                                    src="${post.pPic}"></a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <article>
-                                                                        <p class="content">${post.pContent}</p></article>
-                                                                </div>
-                                                            </div>                                                     
-                                                        </div>
+                                    <c:forEach items="${first}" var="post" varStatus="loop">
+                                        <div class="section">
+                                            <div class="item">
+                                                <div class="content">
+                                                    <div class="avatar">
+                                                        <i class="fas fa-pencil-alt icon-4x"></i>
                                                     </div>
-                                                </table></c:when></c:choose> 
-                                        <c:choose>
-                                            <c:when test="${post.pId== '2'}"><table>
-                                                    <div class="section">                                            
-                                                        <div class="content">
-                                                            <div class="avatar">
-                                                                <i class="fas fa-quote-left icon-4x"></i>
-                                                            </div>
-                                                            <div class="item">
-                                                                <div class="controls">
-                                                                    <span class="date-text">${post.date}</span>
-                                                                </div>
-                                                                <div class="heading">
-                                                                    <h4><a rel="nofollow"
-                                                                           href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></h4>
-                                                                </div>
-                                                                <div class="content">
-                                                                    <blockquote class="pull-right">
-                                                                        <p>${post.pContent}</p>                                                        
-                                                                    </blockquote>
-                                                                </div>
+                                                    <div class="controls">
+                                                        <span class="date-text">${post.date}</span>
+                                                    </div>
+                                                    <div class="heading">
+                                                        <h4><a rel="nofollow"
+                                                               href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></h4>
+                                                    </div>
+                                                    </tr>
+                                                    <div class="content">
+                                                        <div class="img-simple span6 pull-left">
+                                                            <div class="image">
+                                                                <a rel="nofollow" data-ss="imagemodal"
+                                                                   data-href=""><img
+                                                                        src="${post.pPic}"></a>
                                                             </div>
                                                         </div>
+                                                        <article>
+                                                            <p class="content">${post.pContent}</p></article>
                                                     </div>
-                                                </table></c:when></c:choose>  
-                                        <c:choose>
-                                            <c:when test="${post.pId== '3'}"><table>
-                                                    <div class="section">
+                                                </div>                                                     
+                                            </div>
+                                        </div>
+                                        </table>
+                                    </c:forEach>
+                                    <c:forEach items="${second}" var="post" varStatus="loop">                                        <table>
+                                            <div class="section">                                            
+                                                <div class="content">
+                                                    <div class="avatar">
+                                                        <i class="fas fa-quote-left icon-4x"></i>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="controls">
+                                                            <span class="date-text">${post.date}</span>
+                                                        </div>
+                                                        <div class="heading">
+                                                            <h4><a rel="nofollow"
+                                                                   href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a></h4>
+                                                        </div>
                                                         <div class="content">
-                                                            <div class="avatar">
-                                                                <i class="fas fa-camera-retro icon-4x"></i>
+                                                            <blockquote class="pull-right">
+                                                                <p>${post.pContent}</p>                                                        
+                                                            </blockquote>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </table> 
+                                    </c:forEach>
+                                    <c:forEach items="${third}" var="post" varStatus="loop">
+                                        <table>
+                                            <div class="section">
+                                                <div class="content">
+                                                    <div class="avatar">
+                                                        <i class="fas fa-camera-retro icon-4x"></i>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="controls">
+                                                            <span class="date-text">${post.date}</span>
+                                                        </div>
+                                                        <div class="heading">
+                                                            <h4><a rel="nofollow"
+                                                                   href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="img-simple  ">
+                                                                <div class="image">
+                                                                    <a rel="nofollow" data-ss="imagemodal"
+                                                                       data-href=""><img
+                                                                            src="${post.pPic}"></a>
+                                                                </div>
                                                             </div>
-                                                            <div class="item">
-                                                                <div class="controls">
-                                                                    <span class="date-text">${post.date}</span>
-                                                                </div>
-                                                                <div class="heading">
-                                                                    <h4><a rel="nofollow"
-                                                                           href="DetailServlet?title=${post.pTitle}">${post.pTitle}</a>
-                                                                    </h4>
-                                                                </div>
-                                                                <div class="content">
-                                                                    <div class="img-simple  ">
-                                                                        <div class="image">
-                                                                            <a rel="nofollow" data-ss="imagemodal"
-                                                                               data-href=""><img
-                                                                                    src="${post.pPic}"></a>
-                                                                        </div>
-                                                                    </div>
 
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
-                                                </table></c:when></c:choose>            </c:forEach>
-                                                <ul class="pager">
-                                                    <li><a rel="nofollow"
-                                                           href="overview.jsp">Overview</a>
+                                                </div>
+                                            </div>
+                                        </table>        </c:forEach>
+                                        <ul class="pager">
+                                            <li><a rel="nofollow"
+                                                   href="http://localhost:8084/LAB231-J3.L.P0011/ListServlet">Overview</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="right" class="span3">
+                                <div class="sidebar">
+                                    <div class="wrapper share-box">
+                                        <style>
+                                            .wordwrapfix {
+                                                word-wrap: break-word;
+                                            }
+                                        </style>
+                                        <div class="heading wordwrapfix">
+                                            <h4>Share this page</h4>
+                                        </div>
+
+                                        <div class="content"><span>
+                                                <ul>
+                                                    <li><a id="share-facebook"
+                                                           href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8084/LAB231-J3.L.P0011/"><i class="fab fa-facebook-square"></i><span>Share on
+                                                                Facebook</span></a></li>
+                                                    <li><a id="share-twitter"
+                                                           href="https://twitter.com/home?status=http://localhost:8084/LAB231-J3.L.P0011/ http://localhost:8084/LAB231-J3.L.P0011/"><i class="fab fa-twitter-square"></i><span>Share on Twitter</span></a>
                                                     </li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="right" class="span3">
-                                        <div class="sidebar">
-                                            <div class="wrapper share-box">
-                                                <style>
-                                                    .wordwrapfix {
-                                                        word-wrap: break-word;
-                                                    }
-                                                </style>
-                                                <div class="heading wordwrapfix">
-                                                    <h4>Share this page</h4>
-                                                </div>
-
-                                                <div class="content"><span>
-                                                        <ul>
-                                                            <li><a id="share-facebook"
-                                                                   href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8084/LAB231-J3.L.P0011/"><i class="fab fa-facebook-square"></i><span>Share on
-                                                                        Facebook</span></a></li>
-                                                            <li><a id="share-twitter"
-                                                                   href="https://twitter.com/home?status=http://localhost:8084/LAB231-J3.L.P0011/ http://localhost:8084/LAB231-J3.L.P0011/"><i class="fab fa-twitter-square"></i><span>Share on Twitter</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </span></div>
-                                            </div>
-                                        </div>
+                                            </span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid footer-wrapper" id="footer">                
-                            <div class="container">
-                                <div class="footer-info">
-                                    <div class="footer-info-text">
-                                        This website was created with team 3
-                                    </div>
-                                </div>
-                                <div class="footer-page-counter" style="display: block;">
-                                    <span>${hit}</span>
+                    </div>
+                </div>
+                <div class="container-fluid footer-wrapper" id="footer">                
+                    <div class="container">
+                        <div class="footer-info">
+                            <div class="footer-info-text">
+                                This website was created with team 3
+                            </div>
+                        </div>
+                        <div class="footer-page-counter" style="display: block;">
+                            <span>${hit}</span>
                     </div>
                     <div id="css_simplesite_com_fallback" class="hide"></div>
                 </div>
@@ -218,7 +217,7 @@
         <div style="display: none; visibility: hidden;">            
             <noscript></noscript>
         </div>
-                    <script src="1.js"></script>
+        <script src="1.js"></script>
     </body>
 
 </html>    

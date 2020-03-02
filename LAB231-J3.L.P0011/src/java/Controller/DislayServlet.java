@@ -32,9 +32,11 @@ public class DislayServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     int i = 0; //counter
-    public void init(){
+
+    public void init() {
         i = 1;
     }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -43,7 +45,7 @@ public class DislayServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DislayServlet</title>");            
+            out.println("<title>Servlet DislayServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet DislayServlet at " + request.getContextPath() + "</h1>");
@@ -78,14 +80,32 @@ public class DislayServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);                
+        HttpSession session = request.getSession(true);
         ArrayList<Post> ap = Post.getP();
+        ArrayList<Post> firstList = new ArrayList<>();
+        ArrayList<Post> secondList = new ArrayList<>();
+        ArrayList<Post> thirdList = new ArrayList<>();
         System.out.println(ap.toString());
-        session.setAttribute("list", ap);
-        
+
+        for (Post p : ap) {
+            if (p.getpPic() == null) {
+                secondList.add(p);
+            } else if (p.getpContent() == null) {
+                thirdList.add(p);
+            } else {
+                firstList.add(p);
+            }
+        }
+
+        session.setAttribute("first", firstList);
+        session.setAttribute("second", secondList);
+        session.setAttribute("third", thirdList);
+        session.setAttribute("url", "http://localhost:8084/LAB231-J3.L.P0011/ListServlet");
+        session.setAttribute("homeurl", "http://localhost:8084/LAB231-J3.L.P0011/");
+        session.setAttribute("aboutmeurl", "http://localhost:8084/LAB231-J3.L.P0011/aboutme.jsp");
         i++;
         session.setAttribute("count", i);
-        
+
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }
